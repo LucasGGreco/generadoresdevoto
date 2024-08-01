@@ -303,3 +303,9 @@ footer{
     bottom: 0;
     margin-bottom: 0px;
 }
+
+.swal2-confirm {
+    background-color: var(--facebook-color) !important; /* Cambia el color de fondo */
+    color: #ffffff !important;           /* Cambia el color del texto */
+    border: none;                        /* Opcional: quita el borde */
+}
