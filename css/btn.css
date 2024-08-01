@@ -1,0 +1,50 @@
+:root {
+    --negro: #0C0D12;
+    --gris: #393939;
+    --blanco: #FDFFF9;
+    --beige: #EEE9D1;
+    --rojo: #E11B1D;
+    --rojo-oscuro: #A40000;
+}
+.btn-primary:hover{
+    background-color: var(--rojo);
+}
+.btn-estilo {
+    background: var(--rojo);
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+}
+span , .btn-estilo i{
+    display: inline-block;
+    transform: skew(21deg);
+}
+.btn-estilo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: var(--rojo-oscuro);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.btn-estilo:hover {
+    color: #fff;
+}
+.btn-estilo:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.bi-whatsapp-btn{
+    transform: skew(21deg);
+}
