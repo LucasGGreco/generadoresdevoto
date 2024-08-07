@@ -37,36 +37,62 @@ jQuery(document).ready(function($) {
             "id": "9", 
             "imagen": "img/galeria/generador9.png", 
             "descripcion": "Jhon deer 200kva - Cramaco Industria Nacional" 
+        },{ 
+            "id": "10", 
+            "imagen": "img/galeria/generador10.png", 
+            "descripcion": "Logus 40-VDP-Back Up" 
         },
     ];
   
     const galeria = document.getElementById("galeria");
-  
     for (const element of data) {
+        console.log(element.id);
         const item = element;
 
         const elementoDiv = document.createElement("div");
         elementoDiv.className = "col-12 col-md-6 col-lg-4 my-3 mx-0";
 
-        // Agrega título y descripción al div
-        elementoDiv.innerHTML = `
-        <div class="card" data-toggle="modal" data-target="#modal${item.id}">
-            <div class="card-img">
-                <img src="${item.imagen}" alt="Generadores Devoto">
-                <div class="overlay-text">${item.descripcion}</div>
+        if (element.id == 10) {
+            elementoDiv.innerHTML = `
+            <div class="card" data-toggle="modal" data-target="#modal${item.id}">
+                <div class="card-img">
+                    <img src="${item.imagen}" alt="Generadores Devoto">
+                    <div class="overlay-text">${item.descripcion}</div>
+                </div>
             </div>
-        </div>
-
-        <div class="modal fade" id="modal${item.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content bg-transparent">
-                    <div class="modal-body text-center">
-                        <img src="${item.imagen}" alt="${item.descripcion}" class="img-fluid">
+    
+            <div class="modal fade" id="modal${item.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content bg-transparent">
+                        <div class="modal-body text-center">
+                            <video controls>
+                                <source src="mp4/logus.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        `;
+            `;
+        }else{
+            elementoDiv.innerHTML = `
+            <div class="card" data-toggle="modal" data-target="#modal${item.id}">
+                <div class="card-img">
+                    <img src="${item.imagen}" alt="Generadores Devoto">
+                    <div class="overlay-text">${item.descripcion}</div>
+                </div>
+            </div>
+    
+            <div class="modal fade" id="modal${item.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content bg-transparent">
+                        <div class="modal-body text-center">
+                            <img src="${item.imagen}" alt="${item.descripcion}" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
 
         // Agrega el div al contenedor
         galeria.appendChild(elementoDiv);
