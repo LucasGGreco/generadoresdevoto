@@ -304,6 +304,12 @@ footer{
     margin-bottom: 0px;
 }
 
+/* Excepción para el span del año en el footer */
+#current-year {
+    transform: none !important;
+    display: inline !important;
+}
+
 .swal2-confirm {
     background-color: var(--facebook-color) !important; /* Cambia el color de fondo */
     color: #ffffff !important;           /* Cambia el color del texto */
